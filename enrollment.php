@@ -14,10 +14,22 @@
 
 </head>
 <body>
-	<h1>Wanbol U - Students</h1>
-	<a href="./add_student.php"><button>ADD NEW STUDENT</button></a>
+	<h1>Wanbol U - LIST OF COURSES AND STUDENTS</h1>
+	<form action="./?=" method="GET">
 	<?php 
-	$sql = 'SELECT * FROM students';
+		$sql = "SELECT * from courses ORDER BY name";
+		$results = mysqli_query($conn, $sql);
+		echo '<select name = course>';
+		while($row = mysqli_fetch_assoc($results)) {
+			echo '<option value = "' . $row['id'] .'">' . $row['name'] . '</option>';
+		};
+		echo '</select>';
+	?>
+	<button type="submit">SEARCH</button>
+	</form>
+
+	<?php 
+	$sql = "SELECT c.id, s.first_name as firstname, s.last_name as lastname, s.date_of_birth as dob, z.name as coursename FROM students_courses c JOIN students s ON (c.students_id = s.id) where ";
 
 	$result = mysqli_query($conn, $sql);
 
@@ -28,7 +40,6 @@
 		<th>First Name</th>
 		<th>Last Name</th>
 		<th>Date of Birth</th>
-		<th>Edit/Delete</th>
 
 	<?php
 		echo '</tr>';
@@ -39,11 +50,6 @@
 	 	<td><?php echo($row['last_name'])?></td>
 	 	<td><?php echo($row['date_of_birth'])?></td>
 
-	 	<td>
-	 		<?php echo'<a href="./edit_student.php?id='. $row['id'] . '&firstname=' . $row['first_name'] . '&lastname=' . $row['last_name'] . '&dob=' . $row['date_of_birth'] .'"><button>EDIT</button></a>' ?>
-	 		
-	 		<?php echo'<a href="./controllers/delete_student.php?id='. $row['id'] .'"><button>DELETE</button></a>' ?>
-	 	</td>
 		</tr>
 		<?php 
 		} 
@@ -51,7 +57,7 @@
 	} 
 
 	else {
-		echo 'No songs available';
+		echo 'No courses available';
 	}
 
 	?>

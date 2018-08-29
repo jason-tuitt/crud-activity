@@ -10,6 +10,9 @@ echo(gettype( $course_id));
 	mysqli_query($conn, $sql_delete);
 
 
-	// header('location: ../courses.php');
+	header('location: ../courses.php');
+
+
+mysqli_close($conn);
 
  

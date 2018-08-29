@@ -15,12 +15,12 @@
 </head>
 <body>
 	<h1>Wanbol U - Courses</h1>
-
+	<a href="./add_course.php"><button>ADD NEW COURSE</button></a>
 	<?php 
 	$sql = 'SELECT * FROM courses';
 
 	$result = mysqli_query($conn, $sql);
-	
+
 	if(mysqli_num_rows($result) > 0) {
 		echo '<table>';
 		echo '<tr>';
@@ -52,7 +52,7 @@
 	 	?>
 	 	<td>
 	 		<?php echo'<a href="./edit_course.php?id='. $row['id'] .'"><button>EDIT</button></a>' ?>
-	 		<?php echo'<a href="./controllers/delete.php?id='. $row['id'] .'"><button>DELETE</button></a>' ?>
+	 		<?php echo'<a href="./controllers/delete_course.php?id='. $row['id'] .'"><button>DELETE</button></a>' ?>
 	 	</td>
 	 	</td>
 		</tr>
