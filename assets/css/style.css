@@ -7,3 +7,92 @@ td {
 	padding: 5px;
 	text-align: center;
 }
+
+body {
+	background-color: #6f72721a !important;
+	min-height: 100vh !important;
+}
+
+table {
+	width:70%;
+	padding-top: 20px;
+}
+
+.buttoncssprimary {
+	padding: 0;
+	margin: 5px 0;
+}
+
+.buttoncsssecondary {
+	padding: 0;
+	margin-right: 5px;
+}
+
+#indexApp {
+	min-height: 80vh;
+}
+
+h1 {
+	padding-top: 15px;
+	text-align: center;
+}
+
+div[id$="App"] {
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+
+	min-height: 80vh;
+
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/*justify-content: center;*/
+	width:100%;
+}
+
+form > select {
+	width:30%;
+	text-align: center;
+}
+
+footer {
+	padding-top: 10px;
+	width:100vw;
+	height:5vh;
+	/*position:fixed !important;*/
+	bottom: 0 !important;
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+}
+
+input {
+	display: block;
+	padding: 5px;
+	width:30%;
+	text-align: center;
+	margin:7px !important;
+}
+
+.submitbutton {
+	display: block;
+	margin: 15px !important;
+}
+
+select {
+	width:100%;
+}
+
+#indexApp p {
+	font-size: 24px;
+}
+
+#indexApp p:first-of-type {
+	margin-top: 5px;
+}
