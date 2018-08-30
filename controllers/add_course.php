@@ -7,6 +7,8 @@ $instructor_id = $_POST['instructor'];
 
 // var_dump($course);
 // var_dump($instructor);
+
+
 	
 	$sql_query = "INSERT INTO courses(name, instructors_id) values ('$course', $instructor_id)";
 
@@ -19,5 +21,3 @@ $instructor_id = $_POST['instructor'];
 
 
 	mysqli_close($conn);
-
- 

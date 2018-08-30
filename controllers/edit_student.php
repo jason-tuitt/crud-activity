@@ -9,7 +9,7 @@ $dob = $_POST['dob'];
 $date = strtotime($dob);
 $newdate = date('Y/m/d', $date);
 
-var_dump($id, $firstname, $lastname, $newdate);
+
 
 	$sql_update = "UPDATE students SET first_name='$firstname', last_name='$lastname', date_of_birth='$newdate' WHERE id = $id";
 
